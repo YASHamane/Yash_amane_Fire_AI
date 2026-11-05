@@ -1,18 +1,18 @@
 {
   "impl_a_rules": {
-    "p50_ms": 0.3794,
-    "p95_ms": 0.8174,
-    "mean_ms": 0.414
+    "p50_ms": 0.2557,
+    "p95_ms": 0.8201,
+    "mean_ms": 0.3322
   },
   "impl_c_llm_compiled": {
-    "p50_ms": 0.2298,
-    "p95_ms": 0.3674,
-    "mean_ms": 0.2477
+    "p50_ms": 0.2311,
+    "p95_ms": 0.5991,
+    "mean_ms": 0.2944
   },
   "impl_b_llm_runtime_cached": {
-    "p50_ms": 0.4927,
-    "p95_ms": 1.0236,
-    "mean_ms": 0.584
+    "p50_ms": 1.7968,
+    "p95_ms": 6.7409,
+    "mean_ms": 2.3261
   },
   "impl_b_llm_runtime_live": {
     "p50_ms": 1250.0,

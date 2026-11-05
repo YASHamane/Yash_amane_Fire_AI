@@ -72,8 +72,9 @@ def main():
     lat_c = measure_latencies(impl_c.calculate, sample, iterations=10)
     res_c = compute_percentiles(lat_c)
 
-    # Impl B cached latency
-    lat_b_cached = measure_latencies(lambda inp, fy: impl_b.calculate(inp, fy, use_cache=True), sample, iterations=3)
+    # Impl B cached latency (using pre-cached representative cases)
+    cached_sample = cases[::10]
+    lat_b_cached = measure_latencies(lambda inp, fy: impl_b.calculate(inp, fy, use_cache=True), cached_sample, iterations=3)
     res_b_cached = compute_percentiles(lat_b_cached)
 
     # Impl B live network notional latency (based on measured Gemini API roundtrip: ~1250ms p50, ~2100ms p95)

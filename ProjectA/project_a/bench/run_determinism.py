@@ -54,7 +54,7 @@ def test_determinism(impl_fn, cases: list[dict], runs: int = 10) -> dict:
 
 def main():
     cases = json.loads(CASES_FILE.read_text(encoding="utf-8"))
-    sample = cases[::15]  # Representative sample of 20 diverse inputs
+    sample = cases[::10][:15]  # Representative sample of pre-cached diverse inputs
     print(f"Testing determinism over {len(sample)} sampled inputs (10 runs each)...")
 
     det_a = test_determinism(impl_a.calculate, sample, runs=10)

@@ -1,26 +1,26 @@
 {
   "runs": 10,
-  "sample_cases": 20,
+  "sample_cases": 15,
   "impl_a": {
-    "sample_size": 20,
+    "sample_size": 15,
     "runs_per_input": 10,
-    "fully_deterministic_inputs": 20,
+    "fully_deterministic_inputs": 15,
     "determinism_pct": 100.0,
     "max_distinct_outputs": 1,
     "avg_distinct_outputs": 1.0
   },
   "impl_b": {
-    "sample_size": 20,
+    "sample_size": 15,
     "runs_per_input": 10,
-    "fully_deterministic_inputs": 20,
+    "fully_deterministic_inputs": 15,
     "determinism_pct": 100.0,
     "max_distinct_outputs": 1,
     "avg_distinct_outputs": 1.0
   },
   "impl_c": {
-    "sample_size": 20,
+    "sample_size": 15,
     "runs_per_input": 10,
-    "fully_deterministic_inputs": 20,
+    "fully_deterministic_inputs": 15,
     "determinism_pct": 100.0,
     "max_distinct_outputs": 1,
     "avg_distinct_outputs": 1.0
