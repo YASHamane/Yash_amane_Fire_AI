@@ -50,6 +50,21 @@ python run_all.py
 make all
 ```
 
+### Launch Interactive UI Dashboard
+To run the visual interactive dashboard for demonstrations and technical defense interviews:
+
+```bash
+python run_ui.py
+# Or directly:
+python project_b/src/app.py
+```
+This opens `http://localhost:8501` featuring:
+1. **Real 2023 Defects Profiler**: Live inspect 4,313 temporal paradoxes, 1,614 postal mismatches, and 109,221 PII leaks.
+2. **The 12 Problem Injectors**: Side-by-side clean vs injected diff viewer with ground-truth badges.
+3. **Detector Benchmark Matrix**: Dynamic filtering by injection rate (1%, 5%, 20%) and detector family.
+4. **Hybrid Pipeline Simulator**: Step-by-step trace showing Tier 1 Rules -> Tier 2 Stats -> Tier 3 Gemini LLM triage ($0.076/1M rows, 197x cheaper).
+5. **Technical Defense Cheat Sheet**: Fast reference for live code modifications and interview scenarios.
+
 ---
 
 ## Deliverables Index
