@@ -1,0 +1,30 @@
+# rules_data/fy2025_26.yaml
+#
+# WHAT: ONLY the changed/new parameters for FY 2025-26 (AY 2026-27).
+# WHY:  Deep-merged on top of fy2024_25.yaml by rules_loader.py. Old regime, standard
+#       deductions, cess, and surcharge are unchanged; new-regime slabs and 87A rebate
+#       were revised by Finance Act 2025.
+# CITATIONS: Point to official sources in sources.md (S10).
+
+fy: "2025-26"
+assessment_year: "2026-27"
+
+new_regime:
+  slabs:
+    all_ages:
+      - {upto: 400000,  rate_pct: 0}
+      - {upto: 800000,  rate_pct: 5}
+      - {upto: 1200000, rate_pct: 10}
+      - {upto: 1600000, rate_pct: 15}
+      - {upto: 2000000, rate_pct: 20}
+      - {upto: 2400000, rate_pct: 25}
+      - {upto: null,    rate_pct: 30}
+    source: S10
+    clause: "Sec 115BAC(1A) as amended by Finance Act 2025"
+
+  rebate_87a:
+    income_limit: 1200000       # tax rebate covers income up to Rs 12 lakh (zero tax)
+    max_rebate: 60000           # maximum rebate under 115BAC
+    marginal_relief: true       # marginal relief for income exceeding Rs 12 lakh
+    source: S10
+    clause: "Sec 87A, first proviso (a) and (b), amended by Finance Act 2025"

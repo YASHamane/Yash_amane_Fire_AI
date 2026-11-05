@@ -1,0 +1,50 @@
+You are an expert tax calculation engine.
+Below is the official income-tax rule text for the applicable financial year, followed by the structured taxpayer input.
+
+Calculate the exact income tax under BOTH the old regime and the new regime for this salaried resident individual, determine which regime is recommended (cheaper), calculate the savings, and generate an ordered trace of every step.
+
+--- OFFICIAL RULE TEXT ---
+{rule_text}
+
+--- TAXPAYER INPUT ---
+{taxpayer_input_json}
+
+--- INSTRUCTIONS ---
+1. Follow every rule in the rule text in exact sequence.
+2. Output ONLY a valid JSON object matching the exact schema below. Do not wrap in markdown quotes if possible, or use standard ```json.
+3. Every step in the trace must have:
+   - "step": string identifier (e.g. "gross_salary", "standard_deduction", "hra_exemption", "total_income", "tax_on_slabs", "rebate_87a", "surcharge", "cess", "total_tax_payable")
+   - "amount": integer rupee amount
+   - "clause": legal citation from the rule text (e.g. "Sec 16(ia)", "Sec 87A", "Sec 115BAC")
+   - "explanation": plain English explanation
+4. Return both regimes ("old", "new"), the "recommended" regime ("old" or "new"), and the "savings" (integer rupees).
+
+JSON Schema:
+{{
+  "fy": "{fy}",
+  "old": {{
+    "regime": "old",
+    "taxable_income": 0,
+    "tax_before_cess": 0,
+    "cess": 0,
+    "total_tax": 0,
+    "trace": [
+      {{"step": "gross_salary", "amount": 0, "clause": "...", "explanation": "..."}}
+    ]
+  }},
+  "new": {{
+    "regime": "new",
+    "taxable_income": 0,
+    "tax_before_cess": 0,
+    "cess": 0,
+    "total_tax": 0,
+    "trace": [
+      {{"step": "gross_salary", "amount": 0, "clause": "...", "explanation": "..."}}
+    ]
+  }},
+  "recommended": "new",
+  "savings": 0,
+  "trace": [
+    {{"step": "regime_choice", "amount": 0, "clause": "...", "explanation": "..."}}
+  ]
+}}

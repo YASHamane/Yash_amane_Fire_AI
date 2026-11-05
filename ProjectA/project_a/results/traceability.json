@@ -1,0 +1,28 @@
+{
+  "impl_a": {
+    "implementation": "impl_a_rules",
+    "total_cases_evaluated": 292,
+    "fully_traced_cases": 292,
+    "case_traceability_pct": 100.0,
+    "total_rupees_checked": 768694480,
+    "traced_rupees": 768694480,
+    "rupee_traceability_pct": 100.0,
+    "missing_clauses_count": 0
+  },
+  "impl_c": {
+    "implementation": "impl_c_llm_compiled",
+    "total_cases_evaluated": 292,
+    "fully_traced_cases": 292,
+    "case_traceability_pct": 100.0,
+    "total_rupees_checked": 768694480,
+    "traced_rupees": 768694480,
+    "rupee_traceability_pct": 100.0,
+    "missing_clauses_count": 0
+  },
+  "impl_b": {
+    "implementation": "impl_b_llm_runtime",
+    "case_traceability_pct": 45.0,
+    "rupee_traceability_pct": 52.4,
+    "note": "Prompt-based LLM at query time intermittently drops statutory citations under schema truncation."
+  }
+}

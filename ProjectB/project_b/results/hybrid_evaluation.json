@@ -1,0 +1,23 @@
+{
+  "hybrid_pipeline": {
+    "alerts_caught": 538,
+    "llm_calls": 1,
+    "runtime_seconds": 0.4488,
+    "throughput_rows_sec": 2228.1,
+    "cost_per_million": 0.0738
+  },
+  "rules_only_baseline": {
+    "alerts_caught": 583,
+    "llm_calls": 0,
+    "runtime_seconds": 0.4879,
+    "throughput_rows_sec": 2049.7,
+    "cost_per_million": 0.0058
+  },
+  "all_llm_baseline": {
+    "alerts_caught": 1,
+    "llm_calls": 67,
+    "runtime_seconds": 0.1102,
+    "throughput_rows_sec": 9077.9,
+    "cost_per_million": 15.0
+  }
+}

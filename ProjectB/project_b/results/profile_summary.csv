@@ -1,0 +1,22 @@
+issue_type,column,count,percentage,description
+null_values,unique_key,0,0.0,Null/missing values in column 'unique_key'
+null_values,created_date,0,0.0,Null/missing values in column 'created_date'
+null_values,closed_date,61893,1.9193,Null/missing values in column 'closed_date'
+null_values,agency,0,0.0,Null/missing values in column 'agency'
+null_values,complaint_type,0,0.0,Null/missing values in column 'complaint_type'
+null_values,descriptor,39318,1.2193,Null/missing values in column 'descriptor'
+null_values,status,0,0.0,Null/missing values in column 'status'
+null_values,resolution_description,46063,1.4284,Null/missing values in column 'resolution_description'
+null_values,incident_zip,38520,1.1945,Null/missing values in column 'incident_zip'
+null_values,borough,0,0.0,Null/missing values in column 'borough'
+null_values,latitude,48576,1.5064,Null/missing values in column 'latitude'
+null_values,longitude,48576,1.5064,Null/missing values in column 'longitude'
+closed_before_created,closed_date,4313,0.1337,Closed timestamp is chronologically earlier than Created timestamp
+future_created_date,created_date,0,0.0,Created date falls in the future beyond 2023 calendar year
+invalid_or_out_of_bounds_coordinates,"latitude,longitude",0,0.0,"Coordinates equal to (0,0) or outside NYC bounding box [40.49-40.92, -74.26--73.69]"
+zip_borough_mismatch,"incident_zip,borough",1614,0.0501,Incident ZIP code does not match official USPS NYC Borough mapping
+unspecified_borough,borough,5991,0.1858,Borough explicitly recorded as 'Unspecified' or empty
+duplicate_unique_keys,unique_key,0,0.0,Primary key 'unique_key' collisions / exact duplicates
+whitespace_formatting_inconsistencies,descriptor,1084,0.0336,"Leading, trailing, or double whitespace in descriptor field"
+pii_in_free_text,"descriptor,resolution_description",109221,3.387,Telephone numbers or email addresses detected in free-text fields
+status_resolution_contradiction,"status,resolution_description",69369,2.1512,Semantic mismatch between status and resolution description

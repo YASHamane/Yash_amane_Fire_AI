@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project-a-tax-engine"
+version = "1.0.0"
+description = "Indian Income-Tax Engine: rules, LLM, or both?"
+authors = [{ name = "Yash Amane", email = "yashamane@users.noreply.github.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=6.0",
+    "pytest>=8.0",
+    "google-genai>=1.0",
+    "python-dotenv>=1.0",
+    "tabulate>=0.9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

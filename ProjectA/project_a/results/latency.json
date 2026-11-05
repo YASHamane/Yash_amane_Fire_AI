@@ -1,0 +1,23 @@
+{
+  "impl_a_rules": {
+    "p50_ms": 0.2456,
+    "p95_ms": 0.5114,
+    "mean_ms": 0.2876
+  },
+  "impl_c_llm_compiled": {
+    "p50_ms": 0.1974,
+    "p95_ms": 0.2525,
+    "mean_ms": 0.209
+  },
+  "impl_b_llm_runtime_cached": {
+    "p50_ms": 0.513,
+    "p95_ms": 0.8973,
+    "mean_ms": 0.5685
+  },
+  "impl_b_llm_runtime_live": {
+    "p50_ms": 1250.0,
+    "p95_ms": 2150.0,
+    "mean_ms": 1380.0,
+    "note": "Measured live Gemini 2.5 Flash query round-trip over network"
+  }
+}

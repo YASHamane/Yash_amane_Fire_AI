@@ -1,0 +1,302 @@
+[
+  {
+    "id": "desc_01",
+    "text": "My annual salary is 1200000, I am 28 years old, no deductions.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1200000, "age_band": "below_60"}
+  },
+  {
+    "id": "desc_02",
+    "text": "Earning 15 LPA, age 32. Invested 1.5L in 80C and 50k in NPS.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1500000, "age_band": "below_60", "section_80c": 150000, "section_80ccd_1b": 50000}
+  },
+  {
+    "id": "desc_03",
+    "text": "Gross salary is 25 Lakhs, age 62 years. Paying 25000 health insurance.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 2500000, "age_band": "60_to_79", "section_80d_self_family": 25000}
+  },
+  {
+    "id": "desc_04",
+    "text": "I am 82 years old with pension salary of 900000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 900000, "age_band": "80_plus"}
+  },
+  {
+    "id": "desc_05",
+    "text": "Salary 1.2 Crore, age 45. Home loan interest 2 Lakhs.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 12000000, "age_band": "below_60", "home_loan_interest": 200000}
+  },
+  {
+    "id": "desc_06",
+    "text": "Meri salary 15 lakh hai, umar 30 saal, basic 6 lakh, HRA 2.4 lakh, Mumbai me rehta hu aur 3 lakh rent deta hu.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1500000, "age_band": "below_60", "basic_salary": 600000, "hra_received": 240000, "rent_paid_annual": 300000, "city_type": "metro"}
+  },
+  {
+    "id": "desc_07",
+    "text": "Salary 8 Lakhs, age 26, basic 4 Lakhs, rent 1.8 Lakhs in Delhi, HRA 1.6 Lakhs.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 800000, "age_band": "below_60", "basic_salary": 400000, "rent_paid_annual": 180000, "hra_received": 160000, "city_type": "metro"}
+  },
+  {
+    "id": "desc_08",
+    "text": "Annual package 18L, 35 yrs old, basic salary 8L, paying rent 2.4L in Pune, received HRA 2L.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1800000, "age_band": "below_60", "city_type": "non_metro"}
+  },
+  {
+    "id": "desc_09",
+    "text": "I earn 1 lakh per month, age 29, 80c 1.5L.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1200000, "age_band": "below_60", "section_80c": 150000}
+  },
+  {
+    "id": "desc_10",
+    "text": "Retired teacher, 67 years old, earning 7.5 Lakhs per year.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 750000, "age_band": "60_to_79"}
+  },
+  {
+    "id": "desc_11",
+    "text": "Senior citizen age 72 with gross salary 14 LPA and medical insurance 45000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1400000, "age_band": "60_to_79"}
+  },
+  {
+    "id": "desc_12",
+    "text": "CTC 30L, age 38, parents are senior with health insurance 40000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 3000000, "parents_are_senior": true}
+  },
+  {
+    "id": "desc_13",
+    "text": "Salary 50 Lakhs, age 52, housing loan interest 180000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 5000000, "home_loan_interest": 180000}
+  },
+  {
+    "id": "desc_14",
+    "text": "Package 22 LPA, age 31, PPF 1.5 Lakhs, NPS 50000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 2200000, "section_80c": 150000, "section_80ccd_1b": 50000}
+  },
+  {
+    "id": "desc_15",
+    "text": "Super senior citizen 85 years, salary 16 Lakhs.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1600000, "age_band": "80_plus"}
+  },
+  {
+    "id": "desc_16",
+    "text": "Package is 650000, age 24. No investments.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 650000, "age_band": "below_60"}
+  },
+  {
+    "id": "desc_17",
+    "text": "Gross 11L, age 27, living in Kolkata, basic 5L, rent 1.5L, HRA 1.2L.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1100000, "city_type": "metro"}
+  },
+  {
+    "id": "desc_18",
+    "text": "Earn 50k per month, age 25, no rent.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 600000, "age_band": "below_60"}
+  },
+  {
+    "id": "desc_19",
+    "text": "Salary 2.5 Cr, age 49, 80C 150000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 25000000, "age_band": "below_60"}
+  },
+  {
+    "id": "desc_20",
+    "text": "Annual income 400000, 23 years young fresher.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 400000, "age_band": "below_60"}
+  },
+  {
+    "id": "desc_21",
+    "text": "I am 34 years old, paying 25000 rent per month.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_22",
+    "text": "Earning 18 LPA in Bengaluru, 80C 1.5L.",
+    "expected_status": "clarification_needed",
+    "missing_field": "age_band"
+  },
+  {
+    "id": "desc_23",
+    "text": "Salary 12 Lakhs, claiming HRA of 2 Lakhs, rent paid 2.5 Lakhs.",
+    "expected_status": "clarification_needed",
+    "missing_field": "age_band"
+  },
+  {
+    "id": "desc_24",
+    "text": "I earn a decent salary as a software lead, age 32.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_25",
+    "text": "Good package in banking sector, age 41, 80C 1.5L.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_26",
+    "text": "I am earning 15, age 29.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_27",
+    "text": "Salary is 20, 35 years old.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_28",
+    "text": "Paying rent of 30k in Mumbai, 80C 1.5L.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_29",
+    "text": "Age 61 senior citizen, NPS 50000, home loan interest 1.5L.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_30",
+    "text": "I earn 9.5 LPA.",
+    "expected_status": "clarification_needed",
+    "missing_field": "age_band"
+  },
+  {
+    "id": "desc_31",
+    "text": "Gross 14 LPA, age 30, claiming HRA 2L, paying rent 2.4L.",
+    "expected_status": "clarification_needed",
+    "missing_field": "basic_salary"
+  },
+  {
+    "id": "desc_32",
+    "text": "Salary 20 LPA, basic 10 LPA, age 33, claiming HRA 3L.",
+    "expected_status": "clarification_needed",
+    "missing_field": "rent_paid_annual"
+  },
+  {
+    "id": "desc_33",
+    "text": "I live with my parents and pay no rent, but I want to claim 1.5L HRA, salary 12 LPA, age 26.",
+    "expected_status": "contradiction",
+    "conflict": "no_rent_with_hra"
+  },
+  {
+    "id": "desc_34",
+    "text": "Living with parents, rent nahi deta, but got HRA 1 lakh, gross salary 8 LPA, age 25.",
+    "expected_status": "contradiction",
+    "conflict": "no_rent_with_hra"
+  },
+  {
+    "id": "desc_35",
+    "text": "Gross salary is 10 Lakhs, basic salary is 14 Lakhs, age 35.",
+    "expected_status": "contradiction",
+    "conflict": "basic_exceeds_gross"
+  },
+  {
+    "id": "desc_36",
+    "text": "Annual package 6L, basic salary 8L, age 27.",
+    "expected_status": "contradiction",
+    "conflict": "basic_exceeds_gross"
+  },
+  {
+    "id": "desc_37",
+    "text": "Dont pay rent at all, rent paid 120000, salary 15 LPA, age 31.",
+    "expected_status": "contradiction",
+    "conflict": "conflicting_rent_statements"
+  },
+  {
+    "id": "desc_38",
+    "text": "Gross salary 16 Lakhs, age 40, basic 7L, HRA 2.5L, rent 3L in Chennai, 80C 1.5L.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1600000, "city_type": "metro"}
+  },
+  {
+    "id": "desc_39",
+    "text": "Package 10.5 Lakhs, age 29, PF 80000, health insurance 20000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1050000, "section_80c": 80000}
+  },
+  {
+    "id": "desc_40",
+    "text": "Salary 720000, age 27, NPS 40000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 720000, "section_80ccd_1b": 40000}
+  },
+  {
+    "id": "desc_41",
+    "text": "CTC 28 Lakhs, age 58, home loan 2 Lakhs, ELSS 1.5 Lakhs.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 2800000, "section_80c": 150000}
+  },
+  {
+    "id": "desc_42",
+    "text": "Salary 13.5 LPA, age 36, paying 18000 rent per month in Gurgaon, basic 6L, HRA 2L.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 1350000, "city_type": "non_metro"}
+  },
+  {
+    "id": "desc_43",
+    "text": "I have 45L package, age 48, parents are senior with medical insurance 50000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 4500000, "parents_are_senior": true}
+  },
+  {
+    "id": "desc_44",
+    "text": "Salary 3500000, age 63, standard senior citizen.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 3500000, "age_band": "60_to_79"}
+  },
+  {
+    "id": "desc_45",
+    "text": "Salary 80k per month, age 26, PPF 100000.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 960000, "section_80c": 100000}
+  },
+  {
+    "id": "desc_46",
+    "text": "Gross 500000, age 22, no investments.",
+    "expected_status": "valid",
+    "expected_field_values": {"gross_salary": 500000, "age_band": "below_60"}
+  },
+  {
+    "id": "desc_47",
+    "text": "Earning handsome salary in consulting firm, age 33.",
+    "expected_status": "clarification_needed",
+    "missing_field": "gross_salary"
+  },
+  {
+    "id": "desc_48",
+    "text": "Salary is 18 LPA, 80C 1.5L, health insurance 25k.",
+    "expected_status": "clarification_needed",
+    "missing_field": "age_band"
+  },
+  {
+    "id": "desc_49",
+    "text": "Salary 1200000, basic 1500000, age 30.",
+    "expected_status": "contradiction",
+    "conflict": "basic_exceeds_gross"
+  },
+  {
+    "id": "desc_50",
+    "text": "Not paying rent, but claiming HRA 80000, salary 9 LPA, age 27.",
+    "expected_status": "contradiction",
+    "conflict": "no_rent_with_hra"
+  }
+]

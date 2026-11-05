@@ -1,0 +1,109 @@
+{
+  "fy_2025_26_results": {
+    "impl_a": {
+      "implementation": "impl_a_rules",
+      "fy": "2025-26",
+      "total_cases": 301,
+      "exact_matches": 301,
+      "accuracy_pct": 100.0,
+      "loud_errors": 0,
+      "silent_failures": 0,
+      "sample_silent_failures": []
+    },
+    "impl_c": {
+      "implementation": "impl_c_llm_compiled",
+      "fy": "2025-26",
+      "total_cases": 301,
+      "exact_matches": 301,
+      "accuracy_pct": 100.0,
+      "loud_errors": 0,
+      "silent_failures": 0,
+      "sample_silent_failures": []
+    },
+    "impl_b": {
+      "implementation": "impl_b_llm_runtime",
+      "fy": "2025-26",
+      "total_cases": 31,
+      "exact_matches": 26,
+      "accuracy_pct": 83.87,
+      "loud_errors": 0,
+      "silent_failures": 5,
+      "sample_silent_failures": [
+        {
+          "case_id": "slab_new_2000000_-4",
+          "actual_old": 436800,
+          "expected_old": 436800,
+          "actual_new": 205500,
+          "expected_new": 208000,
+          "diff_new": -2500
+        },
+        {
+          "case_id": "rebate_new_marginal_20000",
+          "actual_old": 193440,
+          "expected_old": 193440,
+          "actual_new": 35800,
+          "expected_new": 20800,
+          "diff_new": 15000
+        },
+        {
+          "case_id": "surcharge_old_10000000_-10",
+          "actual_old": 3217500,
+          "expected_old": 3217500,
+          "actual_new": 2940440,
+          "expected_new": 2942940,
+          "diff_new": -2500
+        },
+        {
+          "case_id": "surcharge_old_20000000_+1000",
+          "actual_old": 6952790,
+          "expected_old": 6952790,
+          "actual_new": 6662570,
+          "expected_new": 6665070,
+          "diff_new": -2500
+        },
+        {
+          "case_id": "surcharge_old_50000000_+1000000",
+          "actual_old": 20296250,
+          "expected_old": 20296250,
+          "actual_new": 19331750,
+          "expected_new": 19334250,
+          "diff_new": -2500
+        }
+      ]
+    }
+  },
+  "regression_fy_2024_25": {
+    "regression_passed": true,
+    "impl_a_accuracy": 100.0,
+    "impl_c_accuracy": 100.0
+  },
+  "change_metadata": {
+    "impl_a": {
+      "time_taken_minutes": 15,
+      "files_touched": [
+        "rules_data/fy2025_26.yaml",
+        "rules_data/sources.md"
+      ],
+      "what_broke": "Nothing. Data overlay deep-merged cleanly over base YAML.",
+      "silent_failures": 0
+    },
+    "impl_c": {
+      "time_taken_minutes": 35,
+      "files_touched": [
+        "rules_data/rule_text/fy2025_26.md",
+        "impl_c_llm_compiled/generated/rules_fy2025_26.py",
+        "impl_c_llm_compiled/generated/REVIEW_LOG.md"
+      ],
+      "what_broke": "LLM compiler initially missed 12L marginal relief formula; caught during human review.",
+      "silent_failures": 0
+    },
+    "impl_b": {
+      "time_taken_minutes": 10,
+      "files_touched": [
+        "rules_data/rule_text/fy2025_26.md"
+      ],
+      "what_broke": "LLM at query time silently miscalculated 12L-16L bracket tax and dropped 87A marginal relief.",
+      "silent_failures": 5
+    }
+  }
+}

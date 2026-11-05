@@ -1,0 +1,135 @@
+{
+  "fy": "2024-25",
+  "impl_a": {
+    "implementation": "impl_a_rules",
+    "total_cases": 292,
+    "exact_matches": 292,
+    "accuracy_pct": 100.0,
+    "by_tag": {
+      "slab_edge": 100.0,
+      "old": 100.0,
+      "below_60": 100.0,
+      "rounding": 100.0,
+      "rebate_old": 100.0,
+      "60_to_79": 100.0,
+      "80_plus": 100.0,
+      "new": 100.0,
+      "rebate_marginal": 100.0,
+      "surcharge_old": 100.0,
+      "surcharge_new": 100.0,
+      "deduction_cap": 100.0,
+      "senior": 100.0,
+      "hra": 100.0,
+      "metro": 100.0,
+      "non_metro": 100.0,
+      "edge": 100.0,
+      "random": 100.0
+    },
+    "sample_failures": []
+  },
+  "impl_b": {
+    "implementation": "impl_b_llm_runtime",
+    "total_cases": 30,
+    "exact_matches": 22,
+    "accuracy_pct": 73.33,
+    "by_tag": {
+      "slab_edge": 66.7,
+      "old": 72.2,
+      "below_60": 100.0,
+      "rounding": 66.7,
+      "60_to_79": 75.0,
+      "80_plus": 50.0,
+      "new": 57.1,
+      "rebate_marginal": 0.0,
+      "rebate_old": 100.0,
+      "surcharge_old": 0.0,
+      "surcharge_new": 100.0,
+      "deduction_cap": 100.0,
+      "senior": 100.0,
+      "hra": 100.0,
+      "metro": 100.0,
+      "edge": 100.0,
+      "random": 100.0
+    },
+    "sample_failures": [
+      {
+        "case_id": "slab_old_60_to_79_1000000_+1",
+        "expected_old": 114400,
+        "expected_new": 49400,
+        "tags": [
+          "slab_edge",
+          "old",
+          "60_to_79",
+          "rounding"
+        ]
+      },
+      {
+        "case_id": "slab_old_80_plus_1000000_+5",
+        "expected_old": 104000,
+        "expected_new": 49400,
+        "tags": [
+          "slab_edge",
+          "old",
+          "80_plus",
+          "rounding"
+        ]
+      },
+      {
+        "case_id": "slab_new_1000000_-10",
+        "expected_old": 124800,
+        "expected_new": 52000,
+        "tags": [
+          "slab_edge",
+          "new",
+          "rounding"
+        ]
+      },
+      {
+        "case_id": "slab_new_1500000_-4",
+        "expected_old": 280800,
+        "expected_new": 145600,
+        "tags": [
+          "slab_edge",
+          "new",
+          "rounding"
+        ]
+      },
+      {
+        "case_id": "rebate_new_marginal_10000",
+        "expected_old": 61880,
+        "expected_new": 10400,
+        "tags": [
+          "rebate_marginal",
+          "new"
+        ]
+      }
+    ]
+  },
+  "impl_c": {
+    "implementation": "impl_c_llm_compiled",
+    "total_cases": 292,
+    "exact_matches": 292,
+    "accuracy_pct": 100.0,
+    "by_tag": {
+      "slab_edge": 100.0,
+      "old": 100.0,
+      "below_60": 100.0,
+      "rounding": 100.0,
+      "rebate_old": 100.0,
+      "60_to_79": 100.0,
+      "80_plus": 100.0,
+      "new": 100.0,
+      "rebate_marginal": 100.0,
+      "surcharge_old": 100.0,
+      "surcharge_new": 100.0,
+      "deduction_cap": 100.0,
+      "senior": 100.0,
+      "hra": 100.0,
+      "metro": 100.0,
+      "non_metro": 100.0,
+      "edge": 100.0,
+      "random": 100.0
+    },
+    "sample_failures": []
+  }
+}

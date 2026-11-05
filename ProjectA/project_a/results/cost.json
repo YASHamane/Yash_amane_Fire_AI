@@ -1,0 +1,47 @@
+{
+  "pricing_source": {
+    "date": "2025-03-01",
+    "model": "gemini-2.5-flash",
+    "usd_per_1m_input": 0.075,
+    "usd_per_1m_output": 0.3,
+    "inr_per_usd": 86.5
+  },
+  "impl_a": {
+    "implementation": "impl_a_rules",
+    "input_tokens_per_req": 0,
+    "output_tokens_per_req": 0,
+    "total_tokens_per_1k_req": 0,
+    "cost_usd_per_1k_req": 0.0,
+    "cost_inr_per_1k_req": 0.0,
+    "cost_inr_per_100k_users": 0.0
+  },
+  "impl_b": {
+    "implementation": "impl_b_llm_runtime",
+    "input_tokens_per_req": 1400,
+    "output_tokens_per_req": 350,
+    "total_tokens_per_req": 1750,
+    "total_tokens_per_1k_req": 1750000,
+    "cost_usd_per_1k_req": 0.21,
+    "cost_inr_per_1k_req": 18.16,
+    "cost_inr_per_100k_users": 1816.5
+  },
+  "impl_c": {
+    "implementation": "impl_c_llm_compiled",
+    "one_time_compile_cost_usd": 0.000293,
+    "one_time_compile_cost_inr": 0.0253,
+    "runtime_input_tokens_per_req": 0,
+    "runtime_output_tokens_per_req": 0,
+    "total_tokens_per_1k_req": 0,
+    "cost_usd_per_1k_req": 0.0,
+    "cost_inr_per_1k_req": 0.0,
+    "cost_inr_per_100k_users": 0.0
+  },
+  "nlp_parser": {
+    "component": "nlp_input_parser",
+    "input_tokens_per_req": 550,
+    "output_tokens_per_req": 85,
+    "cost_usd_per_1k_req": 0.0668,
+    "cost_inr_per_1k_req": 5.77,
+    "cost_inr_per_100k_users": 577.39
+  }
+}

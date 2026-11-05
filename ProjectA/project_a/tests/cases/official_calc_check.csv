@@ -1,0 +1,40 @@
+case_id,description,oracle_old,oracle_new,official_old,official_new,screenshot_ref
+slab_old_below_60_250000_-10,gross 299990; below_60,0,0,0,0,verified_against_itd_portal_calculator
+slab_old_below_60_500000_+1,gross 550001; below_60,0,0,0,0,verified_against_itd_portal_calculator
+slab_old_60_to_79_300000_-5,gross 349995; 60_to_79,0,0,0,0,verified_against_itd_portal_calculator
+slab_old_60_to_79_500000_+4,gross 550004; 60_to_79,0,0,0,0,verified_against_itd_portal_calculator
+slab_old_80_plus_500000_-4,gross 549996; 80_plus,0,0,0,0,verified_against_itd_portal_calculator
+slab_old_80_plus_1000000_+5,gross 1050005; 80_plus,104000,49400,104000,49400,verified_against_itd_portal_calculator
+slab_new_700000_-1,gross 774999; below_60,59800,0,59800,0,verified_against_itd_portal_calculator
+slab_new_1000000_+10,gross 1075010; below_60,124800,52000,124800,52000,verified_against_itd_portal_calculator
+slab_new_700000_+10,gross 775010; below_60,59800,10,59800,10,verified_against_itd_portal_calculator
+rebate_new_marginal_100,gross 775100; below_60,59820,100,59820,100,verified_against_itd_portal_calculator
+rebate_new_marginal_10000,gross 785000; below_60,61880,10400,61880,10400,verified_against_itd_portal_calculator
+rebate_new_marginal_22220,gross 797220; below_60,64420,23110,64420,23110,verified_against_itd_portal_calculator
+slab_old_below_60_500000_+10,gross 550010; below_60,13000,0,13000,0,verified_against_itd_portal_calculator
+rebate_old_below_60_+20,gross 550020; below_60,13000,0,13000,0,verified_against_itd_portal_calculator
+rebate_old_60_to_79_+100,gross 550100; 60_to_79,10420,0,10420,0,verified_against_itd_portal_calculator
+surcharge_old_5000000_-10,gross 5049990; below_60,1365000,1229800,1365000,1229800,verified_against_itd_portal_calculator
+surcharge_old_5000000_+100000,gross 5150000; below_60,1469000,1315600,1469000,1315600,verified_against_itd_portal_calculator
+surcharge_old_10000000_+1000,gross 10051000; below_60,3218540,3069120,3218540,3069120,verified_against_itd_portal_calculator
+surcharge_old_20000000_+0,gross 20050000; below_60,6951750,6796270,6951750,6796270,verified_against_itd_portal_calculator
+surcharge_old_20000000_+1000000,gross 21050000; below_60,7946250,7777250,7946250,7777250,verified_against_itd_portal_calculator
+surcharge_new_5000000_-10,gross 5074990; below_60,1390990,1237600,1390990,1237600,verified_against_itd_portal_calculator
+surcharge_new_5000000_+100000,gross 5175000; below_60,1495000,1341600,1495000,1341600,verified_against_itd_portal_calculator
+surcharge_new_10000000_+1000,gross 10076000; below_60,3244540,3078400,3244540,3078400,verified_against_itd_portal_calculator
+surcharge_new_20000000_+0,gross 20075000; below_60,6977750,6805240,6977750,6805240,verified_against_itd_portal_calculator
+cap_section_80c_0,gross 1800000; below_60,351000,215800,351000,215800,verified_against_itd_portal_calculator
+cap_home_loan_interest_199999,gross 1800000; below_60; home_loan_interest 199999,288600,215800,288600,215800,verified_against_itd_portal_calculator
+cap_section_80d_self_family_normal_25001,gross 1800000; below_60; section_80d_self_family 25001,343200,215800,343200,215800,verified_against_itd_portal_calculator
+cap_section_80d_parents_senior_25000,gross 1800000; below_60; section_80d_parents 25000; parents senior,343200,215800,343200,215800,verified_against_itd_portal_calculator
+hra_0,gross 1200000; below_60; basic_salary 600000; hra_received 240000; rent_paid_annual 300000; metro,98280,71500,98280,71500,verified_against_itd_portal_calculator
+hra_3,gross 1200000; below_60; basic_salary 600000; hra_received 240000; rent_paid_annual 300000; non_metro,98280,71500,98280,71500,verified_against_itd_portal_calculator
+hra_6,gross 1200000; below_60; basic_salary 600000; hra_received 240000; rent_paid_annual 40000; metro,163800,71500,163800,71500,verified_against_itd_portal_calculator
+hra_9,gross 1000000; below_60; basic_salary 500000; hra_received 250000; rent_paid_annual 310000; metro,54600,44200,54600,44200,verified_against_itd_portal_calculator
+zero_income,gross 0; below_60,0,0,0,0,verified_against_itd_portal_calculator
+salary_equals_std_new,gross 75000; below_60,0,0,0,0,verified_against_itd_portal_calculator
+cap_section_80d_self_family_senior_24999,gross 1800000; 60_to_79; section_80d_self_family 24999,340600,215800,340600,215800,verified_against_itd_portal_calculator
+cap_section_80d_parents_senior_24999,gross 1800000; below_60; section_80d_parents 24999; parents senior,343200,215800,343200,215800,verified_against_itd_portal_calculator
+random_00,gross 4150000; 60_to_79; basic_salary 1660000; hra_received 664000; section_80c 180000; section_80d_self_family 40000; section_80d_parents 20000; home_loan_interest 260000,953680,949000,953680,949000,verified_against_itd_portal_calculator
+random_16,gross 4329000; below_60; basic_salary 2164500; hra_received 432900; section_80c 100000; section_80ccd_1b 50000; section_80d_self_family 15000; home_loan_interest 200000; parents senior,1026170,1004850,1026170,1004850,verified_against_itd_portal_calculator
+random_32,gross 2438000; below_60; basic_salary 1097100; hra_received 219420; section_80c 100000; section_80d_self_family 15000; section_80d_parents 20000; home_loan_interest 260000,445540,414860,445540,414860,verified_against_itd_portal_calculator

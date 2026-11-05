@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.venv/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Secrets & Environment
+.env
+*.env.local
+
+# Data files (large datasets, raw downloads, cached injected files)
+project_b/data/raw/*
+!project_b/data/raw/.gitkeep
+!project_b/data/raw/nyc_zip_borough_reference.csv
+project_b/data/clean/*
+!project_b/data/clean/.gitkeep
+project_b/data/injected/*
+!project_b/data/injected/.gitkeep
+project_b/data/cache/*
+!project_b/data/cache/.gitkeep
+project_b/311_Service_Requests_from_2020_to_Present_20261105/*
+*.parquet
+*.csv
+!project_b/results/*.csv
+!project_b/data/raw/nyc_zip_borough_reference.csv
+*.csv.gz
+
+# Results cache & temp files
+.pytest_cache/
+.coverage
+htmlcov/

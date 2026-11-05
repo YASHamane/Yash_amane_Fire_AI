@@ -1,0 +1,105 @@
+{
+  "null_closed_date": [
+    "59888398",
+    "59890208",
+    "59891047"
+  ],
+  "null_descriptor": [
+    "59892119",
+    "59890258",
+    "59891172"
+  ],
+  "null_resolution_description": [
+    "59890208",
+    "59890478",
+    "59892373"
+  ],
+  "null_incident_zip": [
+    "59893030",
+    "59893870",
+    "59892459"
+  ],
+  "null_latitude": [
+    "59892201",
+    "59892477",
+    "59892296"
+  ],
+  "null_longitude": [
+    "59892201",
+    "59892477",
+    "59892296"
+  ],
+  "closed_before_created": [
+    {
+      "unique_key": "59871154",
+      "created_date": "2023-12-29 09:38:00",
+      "closed_date": "2023-12-28 09:37:00"
+    },
+    {
+      "unique_key": "59871155",
+      "created_date": "2023-12-29 09:36:00",
+      "closed_date": "2023-12-28 09:35:00"
+    },
+    {
+      "unique_key": "59878738",
+      "created_date": "2023-12-29 09:33:00",
+      "closed_date": "2023-12-28 09:32:00"
+    }
+  ],
+  "zip_borough_mismatch": [
+    {
+      "unique_key": "59890027",
+      "incident_zip": "10463",
+      "borough": "MANHATTAN"
+    },
+    {
+      "unique_key": "59893628",
+      "incident_zip": "10463",
+      "borough": "MANHATTAN"
+    },
+    {
+      "unique_key": "59889155",
+      "incident_zip": "10463",
+      "borough": "MANHATTAN"
+    }
+  ],
+  "unspecified_borough": [
+    "59893870",
+    "59893790",
+    "59883001"
+  ],
+  "pii_in_free_text": [
+    {
+      "unique_key": "59891270",
+      "descriptor": "Hydrant Leaking (WC1)",
+      "resolution_description": "The Department of Environment Protection inspected your complaint but could not find the problem you reported. If the condition persists, please call 311 (or 212-639-9675 if calling from a non-New York City area code) with more detailed information to submit a new complaint."
+    },
+    {
+      "unique_key": "59894104",
+      "descriptor": "Illegal Conversion Of Residential Building/Space",
+      "resolution_description": "The Department of Buildings attempted to investigate this complaint twice but could not gain access to the location. If the problem still exists, please call 311 and file a new complaint with additional access information. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675)."
+    },
+    {
+      "unique_key": "59891189",
+      "descriptor": "Removal Request",
+      "resolution_description": "The Department of Sanitation has investigated the complaint and addressed the issue. If the problem persists, call 311 to enter a new complaint. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675)."
+    }
+  ],
+  "status_resolution_contradiction": [
+    {
+      "unique_key": "59888247",
+      "status": "Closed",
+      "resolution_description": "The complaint you filed is a duplicate of a condition already reported by another tenant for a building-wide condition. The original complaint is still open. HPD may attempt to contact you to verify the correction of the condition or may conduct an inspection of your unit if the original complainant is not available for verification."
+    },
+    {
+      "unique_key": "59892796",
+      "status": "Closed",
+      "resolution_description": "The complaint you filed is a duplicate of a condition already reported by another tenant for a building-wide condition. The original complaint is still open. HPD may attempt to contact you to verify the correction of the condition or may conduct an inspection of your unit if the original complainant is not available for verification."
+    },
+    {
+      "unique_key": "59888251",
+      "status": "Closed",
+      "resolution_description": "The complaint you filed is a duplicate of a condition already reported by another tenant for a building-wide condition. The original complaint is still open. HPD may attempt to contact you to verify the correction of the condition or may conduct an inspection of your unit if the original complainant is not available for verification."
+    }
+  ]
+}
