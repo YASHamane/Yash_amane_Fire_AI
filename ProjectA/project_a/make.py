@@ -59,6 +59,10 @@ def target_clean():
     print("Cleaned results and cache files.")
 
 
+def target_ui():
+    run_cmd([PY, "-m", "ui.server"])
+
+
 def target_all():
     target_setup()
     target_test()
@@ -77,6 +81,7 @@ TARGETS = {
     "change": target_change,
     "report": target_report,
     "clean": target_clean,
+    "ui": target_ui,
 }
 
 

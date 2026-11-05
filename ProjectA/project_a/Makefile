@@ -1,7 +1,7 @@
 # Project A Makefile: One command reproduces every reported number -> `make all`
 PY ?= python
 
-.PHONY: all setup test bench parse-eval change report clean
+.PHONY: all setup test bench parse-eval change report clean ui
 
 all: setup test bench parse-eval change report
 
@@ -32,6 +32,10 @@ change:
 # Build RESULTS_A.md from results/*.json (no hand-typed numbers).
 report:
 	$(PY) bench/make_report.py
+
+# Interactive Web UI Dashboard
+ui:
+	$(PY) -m ui.server
 
 clean:
 	python -c "import shutil, glob, os; [os.remove(f) for f in glob.glob('results/*.json')]; [shutil.rmtree(p, ignore_errors=True) for p in ['.pytest_cache', '__pycache__']]"

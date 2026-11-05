@@ -21,6 +21,12 @@ make bench        # Run accuracy, determinism, latency, cost, and traceability b
 make parse-eval   # Evaluate plain-language extraction and clarification on 50 user queries
 make change       # Execute the FY 2025-26 Finance Act change experiment
 make report       # Generate RESULTS_A.md from results/*.json
+make ui           # Launch interactive web dashboard on localhost:8500
+```
+
+### Launch Interactive Web UI
+```bash
+python run_ui.py   # Or: make ui (opens dashboard at http://localhost:8500)
 ```
 
 ---

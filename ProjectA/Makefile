@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all setup test bench parse-eval change report clean
+.PHONY: all setup test bench parse-eval change report clean ui
 
 all:
 	cd project_a && $(MAKE) all
@@ -22,6 +22,9 @@ change:
 
 report:
 	cd project_a && $(MAKE) report
+
+ui:
+	cd project_a && $(MAKE) ui
 
 clean:
 	cd project_a && $(MAKE) clean

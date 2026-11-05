@@ -161,9 +161,9 @@ def extract_fields_rule_based(text: str) -> dict[str, Any]:
                     res["gross_salary"] = amt
                     res["confidence"]["gross_salary"] = 0.90
 
-        # Check "earning [amount]" or "earn [amount]"
+        # Check "earning [amount]" or "earn/make [amount]"
         if not res["gross_salary"]:
-            sal_m3 = re.search(r"\b(?:earning|earn|kamata hoon|income)\s+([0-9.,]+(?:\s*(?:lakh|lakhs|lac|lacs|lpa|(?<=\d)l\b|\bl\b|cr|crore)))\b", t)
+            sal_m3 = re.search(r"\b(?:earning|earn|make|making|kamata hoon|income)\s+([0-9.,]+(?:\s*(?:lakh|lakhs|lac|lacs|lpa|(?<=\d)l\b|\bl\b|cr|crore)))\b", t)
             if sal_m3:
                 amt = _parse_amount(sal_m3.group(1))
                 if amt and amt >= 100000:
