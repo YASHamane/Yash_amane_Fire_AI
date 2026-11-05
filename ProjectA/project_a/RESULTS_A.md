@@ -11,7 +11,7 @@ Every number is produced by code and verified against official Income Tax Depart
 |--------------------------|------------------------|----------------------------|-------------------------------------|
 | FY 24-25 Rupee Accuracy  | 100.0% (292/292)       | 73.33% (sampled)           | 100.0% (292/292)                    |
 | Determinism (10 runs)    | 100.0%                 | 100.0% (cached)            | 100.0%                              |
-| Latency (p50 / p95)      | 0.2557ms / 0.8201ms    | 1250.0ms / 2150.0ms (live) | 0.2311ms / 0.5991ms                 |
+| Latency (p50 / p95)      | 0.2597ms / 0.3888ms    | 1250.0ms / 2150.0ms (live) | 0.2317ms / 0.3296ms                 |
 | Cost per 1,000 reqs      | Rs 0.00 ($0.00)        | Rs 18.16 ($0.21)           | Rs 0.00 (one-time compile: Rs 0.02) |
 | Cost for 100k users      | Rs 0.00                | Rs 1816.5                  | Rs 0.02                             |
 | Rupee Traceability       | 100.0%                 | 52.4%                      | 100.0%                              |
