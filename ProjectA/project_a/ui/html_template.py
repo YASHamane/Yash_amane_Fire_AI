@@ -84,6 +84,24 @@ def render_index_html() -> str:
 
   <!-- TAB 1: CALCULATOR & COMPARISON -->
   <main class="max-w-7xl mx-auto space-y-6" id="tab-calculator">
+    <!-- Smart Natural Language Input Bar on Tab 1 -->
+    <div class="bg-gradient-to-r from-blue-950/70 via-slate-900 to-indigo-950/50 border border-blue-500/40 p-5 rounded-2xl shadow-xl space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <label for="smart-nlp-input" class="text-xs font-black text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+          <span>✨</span> Smart Natural Language Input (English / Hinglish)
+        </label>
+        <span class="text-[11px] text-slate-400">Type or paste salary, rent, age & deductions in plain words</span>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-2.5">
+        <input type="text" id="smart-nlp-input" placeholder="e.g. 'I earn 24 LPA in Mumbai, rent 40k pm, 80C 1.5L, age 32' or 'Mera salary 12 lakh hai Gurgaon me...'" class="flex-1 bg-slate-800/90 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 font-sans" onkeydown="if(event.key==='Enter'){handleSmartNlp();}">
+        <button onclick="handleSmartNlp()" class="bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-xs transition duration-150 shadow-md shadow-blue-900/40 flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <span>⚡</span> Parse & Auto-Calculate
+        </button>
+      </div>
+      <!-- Inline Smart Feedback -->
+      <div id="smart-nlp-feedback" class="hidden text-xs rounded-xl p-3 font-medium transition"></div>
+    </div>
+
     <!-- Presets Bar -->
     <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-wrap items-center gap-2">
       <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mr-2">Quick Presets:</span>
@@ -374,10 +392,32 @@ def render_index_html() -> str:
           <div class="flex items-center justify-between mb-2">
             <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Validated Taxpayer Input Object</span>
             <button onclick="loadNlpIntoCalculator()" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1 rounded-lg transition">
-              🚀 Load Directly Into Calculator & Compute Tax
+              🚀 Load Into Calculator & View Full Audit Trace
             </button>
           </div>
           <pre id="nlp-json" class="text-xs text-emerald-400 font-mono overflow-x-auto"></pre>
+        </div>
+
+        <!-- Live Instant Tax Outcome directly in Tab 2 -->
+        <div id="nlp-calc-preview" class="hidden bg-slate-900 border border-slate-800 p-5 rounded-xl space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Live Tax Calculation for this Input</span>
+            <span id="nlp-rec-badge" class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">New Regime Recommended</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800/80">
+              <span class="text-slate-400 block text-[11px]">Old Regime Tax:</span>
+              <span id="nlp-old-tax" class="text-lg font-black font-mono text-amber-400">₹0</span>
+            </div>
+            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800/80">
+              <span class="text-slate-400 block text-[11px]">New Regime Tax:</span>
+              <span id="nlp-new-tax" class="text-lg font-black font-mono text-emerald-400">₹0</span>
+            </div>
+            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800/80">
+              <span class="text-slate-400 block text-[11px]">Net Rupee Savings:</span>
+              <span id="nlp-savings" class="text-lg font-black font-mono text-white">₹0</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -738,6 +778,55 @@ def render_index_html() -> str:
       });
     }
 
+    // Smart Natural Language Input on Tab 1
+    async function handleSmartNlp() {
+      const inputEl = document.getElementById('smart-nlp-input');
+      const feedback = document.getElementById('smart-nlp-feedback');
+      const text = inputEl ? inputEl.value.trim() : '';
+      if (!text) {
+        feedback.className = 'text-xs rounded-xl p-3 bg-amber-950/40 border border-amber-600/40 text-amber-300 block';
+        feedback.innerHTML = '⚠️ Please enter your salary and tax details in plain words (e.g. <em>"18 LPA in Bangalore, rent 35k pm, age 29"</em>).';
+        return;
+      }
+
+      feedback.className = 'text-xs rounded-xl p-3 bg-blue-950/40 border border-blue-600/40 text-blue-300 block flex items-center gap-2';
+      feedback.innerHTML = '<span class="inline-block h-3 w-3 bg-blue-400 rounded-full animate-ping"></span> <span>Extracting entities and validating domain constraints...</span>';
+
+      try {
+        const res = await fetch('/api/parse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+        const data = await res.json();
+        if (data.valid && data.data) {
+          const d = data.data;
+          document.getElementById('inp-gross').value = d.gross_salary || 0;
+          document.getElementById('inp-basic').value = d.basic_salary || 0;
+          document.getElementById('inp-hra').value = d.hra_received || 0;
+          document.getElementById('inp-rent').value = d.rent_paid_annual || 0;
+          document.getElementById('inp-city').value = d.city_type || 'non_metro';
+          document.getElementById('inp-80c').value = d.section_80c || 0;
+          document.getElementById('inp-nps').value = d.section_80ccd_1b || 0;
+          document.getElementById('inp-80d-self').value = d.section_80d_self_family || 0;
+          document.getElementById('inp-80d-parents').value = d.section_80d_parents || 0;
+          document.getElementById('inp-loan').value = d.home_loan_interest || 0;
+          document.getElementById('inp-age').value = d.age_band || 'below_60';
+          document.getElementById('inp-senior-parents').checked = !!d.parents_are_senior;
+
+          feedback.className = 'text-xs rounded-xl p-3 bg-emerald-950/40 border border-emerald-600/40 text-emerald-300 block flex items-center gap-2';
+          feedback.innerHTML = `<span>✅</span> <span>Extracted <strong>Gross: ₹${(d.gross_salary||0).toLocaleString('en-IN')}</strong>, Rent: ₹${(d.rent_paid_annual||0).toLocaleString('en-IN')}, Age: ${d.age_band}. Form populated and tax computed below!</span>`;
+          runCalculation();
+        } else {
+          feedback.className = 'text-xs rounded-xl p-3 bg-amber-950/40 border border-amber-600/40 text-amber-300 block';
+          feedback.innerHTML = `🛡️ <strong>Clarification Triggered ("Ask, Don't Guess Policy"):</strong> ${data.question}`;
+        }
+      } catch (err) {
+        feedback.className = 'text-xs rounded-xl p-3 bg-rose-950/40 border border-rose-600/40 text-rose-300 block';
+        feedback.innerHTML = `❌ Error: ${err.message}`;
+      }
+    }
+
     // NLP Parser
     function setNlpText(txt) {
       document.getElementById('nlp-input-text').value = txt;
@@ -764,6 +853,7 @@ def render_index_html() -> str:
       const statusBox = document.getElementById('nlp-status-box');
       const dataPreview = document.getElementById('nlp-data-preview');
       const jsonEl = document.getElementById('nlp-json');
+      const calcPreview = document.getElementById('nlp-calc-preview');
       container.classList.remove('hidden');
 
       if (data.valid) {
@@ -778,6 +868,7 @@ def render_index_html() -> str:
         `;
         dataPreview.classList.remove('hidden');
         jsonEl.textContent = JSON.stringify(data.data, null, 2);
+        computeNlpPreview(data.data);
       } else {
         lastValidParsedData = null;
         statusBox.className = 'p-4 rounded-xl border border-amber-500/40 bg-amber-950/20 text-amber-300 flex items-start gap-3';
@@ -790,6 +881,37 @@ def render_index_html() -> str:
           </div>
         `;
         dataPreview.classList.add('hidden');
+        if (calcPreview) calcPreview.classList.add('hidden');
+      }
+    }
+
+    async function computeNlpPreview(taxpayerData) {
+      const previewBox = document.getElementById('nlp-calc-preview');
+      try {
+        const payload = {
+          fy: document.getElementById('inp-fy') ? document.getElementById('inp-fy').value : '2024-25',
+          engine: 'impl_a',
+          taxpayer: taxpayerData
+        };
+        const res = await fetch('/api/calculate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        const primary = data.impl_a || data.impl_c;
+        if (primary && previewBox) {
+          document.getElementById('nlp-old-tax').textContent = fmtRupee(primary.old.total_tax);
+          document.getElementById('nlp-new-tax').textContent = fmtRupee(primary.new.total_tax);
+          document.getElementById('nlp-savings').textContent = fmtRupee(primary.savings);
+          const badge = document.getElementById('nlp-rec-badge');
+          if (badge) {
+            badge.textContent = primary.recommended === 'new' ? 'New Regime Recommended' : 'Old Regime Recommended';
+          }
+          previewBox.classList.remove('hidden');
+        }
+      } catch (e) {
+        console.error('NLP tax preview error:', e);
       }
     }
 
